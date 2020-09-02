@@ -1,4 +1,4 @@
-Makecachematrix <- function    (x = matrix()) {
+Makecachematrix <- function    (x = matrix()) {   ## for matrix calculation
   inverse <- NULL
   set <- function(y)
     {
@@ -6,7 +6,7 @@ Makecachematrix <- function    (x = matrix()) {
     inverse <<- NULL
   }
      get <- function() x
-     setInv <- function(inverse)         inv <<- inverse
+     setInv <- function(inverse)         inv <<- inverse          ## for inverse of matrix calculation
      getInv <- function() inv
   list(set = set, get = get, setInv = setInv, getInv= getInv)
 }
@@ -16,7 +16,8 @@ CacheSolve <- function(x,...) {
   inv <- x$getInverse()
   if (!is.null(inv)) 
     {
-    message("getting cached data")
+    message("getting cached data")                              #3 for printing the inverse of matrix data cashed
+    
     return(inv)
   }
   m <- x$get()
